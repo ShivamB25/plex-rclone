@@ -1,0 +1,21 @@
+version: '3'
+services:
+  plex2:
+    image: plex-rclone
+    container_name: plex2
+    privileged: true
+    devices:
+      - /dev/fuse
+    cap_add:
+      - SYS_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /path/to/config:/config
+      - /path/to/transcode:/transcode
+#      - /path/to/data:/data
+    ports:
+      - 32420:32400
+    restart: unless-stopped
