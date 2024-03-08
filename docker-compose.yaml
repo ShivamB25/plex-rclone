@@ -1,8 +1,8 @@
 version: '3'
 services:
-  plex2:
+  plex:
     image: plex-rclone
-    container_name: plex2
+    container_name: plex
     privileged: true
     devices:
       - /dev/fuse
